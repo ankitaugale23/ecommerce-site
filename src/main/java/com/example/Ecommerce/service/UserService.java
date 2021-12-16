@@ -17,4 +17,9 @@ public class UserService {
         List<User> users = repository.findAll();
         return users;
     }
+
+    public User addOb(User sr){
+        return repository.save(sr);
+    }
+
 }
