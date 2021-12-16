@@ -1,0 +1,99 @@
+*{
+ margin-left: auto;
+ margin-right: auto;
+
+}
+
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial;
+    align-items: center;
+  }
+
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  .navbar form input{
+
+     margin: 7px 0px 5px 1400px;
+
+  }
+
+.column{
+    /* background-color: blueviolet; */
+    height: 100%;
+    width: 100%;
+}
+.column .row1{
+    margin:20px 20px ;
+    align-items: center;
+
+    /* margin-inline:0px 20px ; */
+    /* align-items: center; */
+
+
+}
+.column .row2{
+    align-items: center;
+
+    margin:20px 20px ;
+
+
+}
+
+
+
+.column .row1 .row .card{
+    /* background-color: firebrick; */
+}
+/* card -css */
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {margin: 0 -5px;}
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+  }
+
+  /* Responsive columns - one column layout (vertical) on small screens */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
