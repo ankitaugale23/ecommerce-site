@@ -17,19 +17,12 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String name, int type) {
-        this.id = id;
+    public Product( String name, int type) {
+
         this.name = name;
         this.type = type;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
