@@ -22,4 +22,9 @@ public class UserService {
         return repository.save(sr);
     }
 
+    public User validateLogin(String name, String pass){
+        User ref = repository.findByNameAndPassword(name, pass);
+        return ref;
+    }
+
 }

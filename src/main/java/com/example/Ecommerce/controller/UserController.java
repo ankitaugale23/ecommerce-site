@@ -5,9 +5,7 @@ import com.example.Ecommerce.model.User;
 import com.example.Ecommerce.service.ProductService;
 import com.example.Ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,9 +15,6 @@ public class UserController {
     @Autowired
     UserService service;
 
-    @Autowired
-    ProductService services1;
-
 
     @GetMapping("/users")
     public List<User> showUsers(){
@@ -27,9 +22,17 @@ public class UserController {
         return users;
     }
 
-    @GetMapping("/homepage")
-    public List <String> retrieveProducts( ){
-        List<String> products= services1.retrieveProductByName();
-        return products;
+
+    @PostMapping("/validate")
+    public String validateUser(@RequestParam(name = "username") String name, @RequestParam(name = "password")String password)
+    {
+        User ref = service.validateLogin(name, password);
+        if(ref != null)
+            return "Valid user";
+        else
+            return "Invalid User";
+
+
+
     }
 }

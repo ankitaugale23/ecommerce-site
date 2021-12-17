@@ -11,4 +11,8 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
 
     @Query(value = "select name from product ", nativeQuery = true)
     public List<String> find();
+
+
+    @Query(value = "select name from product where type=?",nativeQuery = true)
+    public List<String> findByType(int type);
 }

@@ -19,5 +19,9 @@ public class ProductService {
         List<String> ref= repo.find();
         return ref;
     }
+    public List<String> retrieveByType(int type){
+        List<String> ref = repo.findByType(type);
+        return ref;
+    }
 
 }
