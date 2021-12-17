@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title>Farm Product</title>
 </head>
 <body>
 <form action="" method="get">
-  <h1> Farm product</h1>
+  <div th:field="${farmproducts}">
+    <div th:each="obj:${farmproducts}">
+      <input type="submit" th:value="${obj}"></input>
+    </div>
+
+
+  </div>
 
 </form>
 
