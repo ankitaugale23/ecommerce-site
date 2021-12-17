@@ -35,4 +35,20 @@ public class UserController {
 
 
     }
+
+    @PostMapping("/insertuser")
+    public String insertName(@RequestParam(name = "username")String username,@RequestParam(name = "pass") String password) {
+        User user = new User(username,password);
+        service.addOb(user);
+        if(username=="" && password=="" ){
+            System.out.println("please insert data");
+            return "register.html";
+
+        }
+
+        System.out.println("name" +username +"password"  +password);
+        return "Registeration Succesfull ";
+//
+
+    }
 }
