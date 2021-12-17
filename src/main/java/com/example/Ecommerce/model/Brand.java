@@ -13,9 +13,9 @@ public class Brand {
     @Column(name = "name")
     String name;
 
-//
-//    @Column(name = "pid")
-    //@ManyToOne
+
+//@Column(name = "pid")
+//@ManyToOne
     int pid;
     @Column(name = "price")
     double price;

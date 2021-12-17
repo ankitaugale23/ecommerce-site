@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xml:th="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-dark justify-content-between">
+    <a class="navbar-brand">HomePage</a>
+    <form class="form-inline" action="/login" method="get">
+
+        <button class="btn btn-outline-success"   type="submit">Login</button>
+
+
+    </form>
+
+    <form class="form-inline" action="/register" method="get">
+        <button class="btn btn-outline-success" type="submit">Register</button>
+    </form>
+</nav>
+
+
+<h1> Products</h1>
+
+<form action="products/dairy" method="get">
+    <input type="submit" name="dairy" value="Dairy Products">
+</form>
+
+<form action="products/farm" method="get">
+    <input type="submit" name="farm" value="farm Products">
+</form>
+
+
+</body>
+
+</html>

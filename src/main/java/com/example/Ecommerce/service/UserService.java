@@ -24,6 +24,7 @@ public class UserService {
 
     public User validateLogin(String name, String pass){
         User ref = repository.findByNameAndPassword(name, pass);
+
         return ref;
     }
 

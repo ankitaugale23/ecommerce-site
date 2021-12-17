@@ -5,11 +5,12 @@ import com.example.Ecommerce.model.User;
 import com.example.Ecommerce.service.ProductService;
 import com.example.Ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 public class UserController {
 
     @Autowired
@@ -28,11 +29,11 @@ public class UserController {
     {
         User ref = service.validateLogin(name, password);
         if(ref != null)
-            return "Valid user";
-        else
-            return "Invalid User";
+            return "Home.html";
+        else {
+            return "Register.html";
 
-
+        }
 
     }
 
@@ -47,8 +48,26 @@ public class UserController {
         }
 
         System.out.println("name" +username +"password"  +password);
-        return "Registeration Succesfull ";
+        return "register.html";
 //
 
+    }
+
+    @GetMapping("/login")
+    public String LoginPage(){
+
+        return "login.html";
+
+    }
+
+    @GetMapping("/register")
+    public String RegisterPage() {
+
+        return "register.html";
+    }
+
+    @GetMapping("/")
+    public String ShowHomepage(){
+        return  "Home.html";
     }
 }
