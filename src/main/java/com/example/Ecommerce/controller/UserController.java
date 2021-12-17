@@ -6,6 +6,7 @@ import com.example.Ecommerce.service.ProductService;
 import com.example.Ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,13 +26,15 @@ public class UserController {
 
 
     @PostMapping("/validate")
-    public String validateUser(@RequestParam(name = "username") String name, @RequestParam(name = "password")String password)
+    public String validateUser(@RequestParam(name = "username") String name, @RequestParam(name = "password")String password, Model model)
     {
         User ref = service.validateLogin(name, password);
         if(ref != null)
             return "Home.html";
         else {
-            return "Register.html";
+
+            model.addAttribute("err","Invalid User");
+            return "login.html";
 
         }
 
@@ -48,7 +51,7 @@ public class UserController {
         }
 
         System.out.println("name" +username +"password"  +password);
-        return "register.html";
+        return "login.html";
 //
 
     }

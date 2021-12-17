@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark justify-content-between">
-    <a class="navbar-brand">LoginPage</a>
-
 
     <form class="form-inline" action="/register" method="get">
         <button class="btn btn-outline-success" type="submit">Register</button>
@@ -27,6 +25,8 @@
 
     </div>
 </form>
+<h4>********************<span th:if="${err}" th:text="${err}"></span>********************</h4>
+
 
 </body>
 </html>

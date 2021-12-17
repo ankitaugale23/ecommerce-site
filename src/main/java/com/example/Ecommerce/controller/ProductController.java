@@ -26,7 +26,7 @@ public class ProductController {
     @GetMapping("/products/farm")
     public String showFarmProducts() {
         List<String> products = service.retrieveByType(1);
-        return "farmproduct";
+        return "farmproduct.html";
     }
 
     @GetMapping("/homepage")
