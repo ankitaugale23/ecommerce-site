@@ -5,9 +5,7 @@ import com.example.Ecommerce.model.User;
 import com.example.Ecommerce.service.ProductService;
 import com.example.Ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +29,21 @@ public class UserController {
     public List <String> retrieveProducts( ){
         List<String> products= services1.retrieveProductByName();
         return products;
+    }
+
+    @PostMapping("/insertuser")
+    public String insertName(@RequestParam(name = "username")String username,@RequestParam(name = "pass") String password) {
+        User user = new User(username,password);
+        service.addOb(user);
+        if(username=="" && password=="" ){
+            System.out.println("please insert data");
+            return "register.html";
+
+        }
+
+        System.out.println("name" +username +"password"  +password);
+        return "Registeration Succesfull ";
+//
+
     }
 }
