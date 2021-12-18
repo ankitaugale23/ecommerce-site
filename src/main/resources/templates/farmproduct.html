@@ -81,20 +81,16 @@
   <h1 style="font-size:7rem" > Farm Products</h1>
 
 
-    <div th:field="${farmproducts}">
-      <form action="" method="get">
+  <div th:field="${farmproducts}">
+    <form action="brand" method="get" >
       <div th:each="obj:${farmproducts}">
-        <input type="submit" style="padding:1rem 2rem;" th:value="${obj}"></input>
+        <input type="submit" style="padding:1rem 2rem;" th:value="${obj.second}" name="farmproduct"></input>
       </div>
-      </form>
-    </div>
+
+
+    </form>
+  </div>
 
 </div>
-
-
-
-
-
-
 </body>
 </html>

@@ -39,10 +39,18 @@ public class ProductController {
 
 
     @GetMapping("/products/dairy/brand")
-    public String showBrands(@RequestParam(name = "dairyproduct") String name,Model model){
+    public String showDairyBrands(@RequestParam(name = "dairyproduct") String name,Model model){
         Integer id = service.retrieveIdFromName(name);
         List<Pair<String, BigDecimal>> ref = service.retrieveBrandFromId(id);
-        model.addAttribute("dairybrands",ref);
+        model.addAttribute("brands",ref);
         return "brands.html";
     }
+    @GetMapping("/products/farm/brand")
+    public String showFarmBrands(@RequestParam(name = "farmproduct") String name,Model model){
+        Integer id = service.retrieveIdFromName(name);
+        List<Pair<String, BigDecimal>> ref = service.retrieveBrandFromId(id);
+        model.addAttribute("brands",ref);
+        return "brands.html";
+    }
+
 }

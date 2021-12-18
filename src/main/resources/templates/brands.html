@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<div th:field="${dairybrands}">
+<div th:field="${brands}">
     <form action="brand" method="get">
-        <div th:each="obj:${dairybrands}">
+        <div th:each="obj:${brands}">
 
             <input type="submit" th:value="${obj.first}+'  '+${obj.second}" name="${obj.second}"></input>
 
