@@ -3,18 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <title>Farm Product</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+           *, *::after, *::before{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body{
+            font-size: 1.6rem;
+            background-color:peachpuff;
+        }
+             /* Navbar container */
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+        align-items: center;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+        float: left;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+             /* Navbar container */
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+        align-items: center;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+        float: left;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+  </style>
 </head>
 <body>
-<form action="" method="get">
-  <div th:field="${farmproducts}">
-    <div th:each="obj:${farmproducts}">
-      <input type="submit" th:value="${obj}"></input>
+
+<nav class="navbar navbar-dark bg-dark justify-content-between k-group">
+
+
+
+
+
+</nav>
+
+<nav class="navbar navbar-dark bg-dark " style="display: flex;
+    background:black;">
+  <a class="navbar-brand">Farm</a>
+  <form class="form-inline " action="/" method="get" style=";">
+    <button class="btn btn-outline-success " style="padding:1rem 1rem;margin:5px 100px" type="submit">Back</button>
+  </form>
+</nav>
+
+
+<div class="row" style="font-size:7rem; font-style:italic; text-align:center; font-weight:700;">
+
+
+
+  <h1 style="font-size:7rem" > Farm Products</h1>
+
+
+    <div th:field="${farmproducts}">
+      <form action="" method="get">
+      <div th:each="obj:${farmproducts}">
+        <input type="submit" style="padding:1rem 2rem;" th:value="${obj}"></input>
+      </div>
+      </form>
     </div>
 
+</div>
 
-  </div>
 
-</form>
+
+
+
 
 </body>
 </html>

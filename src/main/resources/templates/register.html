@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Page</title>
+    <style>
+                *, *::after, *::before{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body{
+            font-size: 1.6rem;
+            background-color:peachpuff;
+        }
+    </style>
 </head>
 <body>
 <script>
 
 </script>
-<nav class="navbar navbar-dark bg-dark justify-content-between">
-
+<nav class="navbar navbar-dark bg-dark justify-content-flex-end" style="display: flex;
+    justify-content: flex-end;flex-end;background:black;">
     <form class="form-inline" action="/login" method="get">
 
-        <button class="btn btn-outline-success"   type="submit">Login</button>
+        <button class="btn btn-outline-success"  style="padding:1rem 1rem;margin:5px 10px" type="submit">Login</button>
 
 
     </form>
@@ -20,18 +36,30 @@
 
 </nav>
 
-<center> <h1> Registration Form </h1> </center>
-<form action="/insertuser" method="post">
-    Name:
-    <input type="text" name="name" size="9" required>  <br> <br>
+<center> <h1 style="font-size:5rem; font-style:italic; text-align:center; font-weight:700;"> Registration Form </h1> </center>
 
-   Username:
-    <input type="text" name="username" size="9" required/> <br> <br>
+<div style="    padding: 20px 40px;
+    margin: 40px 100px;
+    justify-content: center;
+    margin-left: auto;
+    width: fit-content;
+    margin-right: auto;
+    font-size:2rem;
+">
+    <form action="/insertuser" method="post">
+        Name:
+        <input type="text" name="name" style="padding:5px 5px"size="9" required>  <br> <br>
 
-    Password:
-    <input type="Password" id="pass" name="pass" required> <br> <br>
+        Username:
+        <input type="text" name="username" style="padding:5px 5px"size="9" required/> <br> <br>
 
-    <input type="submit"/>
-</form>
+        Password:
+        <input type="Password" id="pass" style="padding:5px 5px"name="pass" required> <br> <br>
+
+        <input type="submit"/>
+    </form>
+</div>
+
+
 </body>
 </html>

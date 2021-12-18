@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xml:th="http://www.w3.org/1999/html">
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -9,18 +9,142 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 
+
+    <style>
+        *, *::after, *::before{
+        margin:0;
+        padding: 0;
+        box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body{
+            font-size: 1.6rem;
+            background-color:peachpuff;
+        }
+
+        /* Navbar container */
+        .navbar {
+        overflow: hidden;
+        background-color: #333;
+        font-family: Arial;
+        align-items: center;
+        }
+
+        /* Links inside the navbar */
+        .navbar a {
+        float: left;
+        font-size: 20px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        .navbar form button{
+        }
+
+        .column{
+        /* background-color: blueviolet; */
+        height: 100%;
+        width: 100%;
+        }
+        .column .row1{
+        margin:20px 5px ;
+        align-items: center;
+
+        /* margin-inline:0px 20px ; */
+        /* align-items: center; */
+
+
+        }
+        .column .row2{
+        align-items: center;
+
+        margin:20px 5px ;
+
+
+        }
+
+
+
+        .column .row1 .row .card{
+        /* background-color: firebrick; */
+        }
+        /* card -css */
+        * {
+        box-sizing: border-box;
+        }
+
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* Float four columns side by side */
+        .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+        }
+
+        /* Remove extra left and right margins, due to padding in columns */
+        .row {margin: 0 -5px;}
+
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+
+        /* Style the counter cards */
+        .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+        }
+
+        .k-group {
+        display: flex;
+        width: 100%;
+      <!--        justify-content: space-between;-->
+        }
+
+        .k-group form:nth-of-type(1) {
+            margin-left: auto;
+            margin-right: 2rem;
+        }
+
+        .k-group form:nth-of-type(2) {
+            margin-right: 2rem;
+        }
+
+
+        /* Responsive columns - one column layout (vertical) on small screens */
+        @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+        }
+
+
+
+    </style>
+
+</head>
 <body>
 
-<nav class="navbar navbar-dark bg-dark justify-content-between">
+<nav class="navbar navbar-dark bg-dark justify-content-between k-group">
     <a class="navbar-brand">HomePage</a>
     <form class="form-inline" action="/login" method="get">
-
-        <button class="btn btn-outline-success"   type="submit">Login</button>
-
-
+        <button class="btn btn-outline-success" type="submit">Login</button>
     </form>
 
     <form class="form-inline" action="/register" method="get">
@@ -28,16 +152,22 @@
     </form>
 </nav>
 
+<div class="row" style="font-size:7rem; font-style:italic; text-align:center; font-weight:700;">
 
-<h1> Products</h1>
 
-<form action="products/dairy/2" method="get">
-    <input type="submit" name="dairy" value="Dairy Products">
-</form>
 
-<form action="products/farm/1" method="get">
-    <input type="submit" name="farm" value="farm Products">
-</form>
+    <h1 style="font-size:7rem" > Products</h1>
+
+    <form action="products/dairy/2" method="get">
+        <button class="btn btn-outlined-success" style="padding:2rem 5rem;" type="submit">Dairy Products</button>
+    </form>
+
+    <form action="products/farm/1" method="get">
+        <button class="btn btn-outline btn-success" style="padding:2rem 5rem;"  type="submit">farm Products</button>
+
+    </form>
+</div>
+
 
 
 </body>
