@@ -4,10 +4,12 @@ import com.example.Ecommerce.model.Product;
 import com.example.Ecommerce.service.ProductService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,7 +23,7 @@ public class ProductController {
 
     @GetMapping("/products/dairy/{id}")
     public String showDairyProducts(@PathVariable("id") int id, Model model){
-       List<String> products = service.retrieveByType(id);
+       List<Pair<Integer,String>> products = service.retrieveByType(id);
        model.addAttribute("dairyproducts",products);
        return "dairyproduct.html";
 
@@ -29,15 +31,17 @@ public class ProductController {
 
     @GetMapping("/products/farm/{id}")
     public String showFarmProducts(@PathVariable("id") int id, Model model) {
-        List<String> products = service.retrieveByType(id);
+        List<Pair<Integer,String>> products = service.retrieveByType(id);
         model.addAttribute("farmproducts",products);
         return "farmproduct.html";
     }
 
-    @GetMapping("/homepage")
-    public List<String> retrieveProducts( ) {
-        List<String> products = service.retrieveProductByName();
-        return products;
-    }
 
+    @GetMapping("/products/dairy/brand")
+    public String showBrands(@RequestParam(name = "dairyproduct") String name,Model model){
+        Integer id = service.retrieveIdFromName(name);
+        List<String> ref = service.retrieveBrandFromId(id);
+        model.addAttribute("dairybrands",ref);
+        return "brands.html";
+    }
 }

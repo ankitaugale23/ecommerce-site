@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Brands</title>
+</head>
+<body>
+
+<div th:field="${dairybrands}">
+    <form action="brand" method="get">
+        <div th:each="obj:${dairybrands}">
+
+            <input type="submit" th:value="${obj}" name="dairybrand"></input>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

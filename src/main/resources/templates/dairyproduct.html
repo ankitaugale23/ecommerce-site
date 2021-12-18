@@ -5,17 +5,16 @@
     <title>Dairy Product</title>
 </head>
 <body>
-<form action="" method="get" >
+
     <div th:field="${dairyproducts}">
+        <form action="brand" method="get">
         <div th:each="obj:${dairyproducts}">
-            <input type="submit" th:value="${obj}"></input>
+
+                <input type="submit" th:value="${obj.second}" name="dairyproduct"></input>
+
         </div>
-
-
+        </form>
     </div>
-
-
-</form>
 
 </body>
 </html>
