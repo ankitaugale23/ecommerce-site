@@ -74,7 +74,7 @@
         <div th:field="${dairyproducts}">
             <form action="brand" method="get" >
             <div th:each="obj:${dairyproducts}">
-                <input type="submit" style="padding:1rem 2rem;" th:value="${obj.second} name=dairyproduct"></input>
+                <input type="submit" style="padding:1rem 2rem;" th:value="${obj.second}" name="dairyproduct"></input>
             </div>
 
 
