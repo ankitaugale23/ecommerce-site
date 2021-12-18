@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Controller
@@ -40,7 +41,7 @@ public class ProductController {
     @GetMapping("/products/dairy/brand")
     public String showBrands(@RequestParam(name = "dairyproduct") String name,Model model){
         Integer id = service.retrieveIdFromName(name);
-        List<String> ref = service.retrieveBrandFromId(id);
+        List<Pair<String, BigDecimal>> ref = service.retrieveBrandFromId(id);
         model.addAttribute("dairybrands",ref);
         return "brands.html";
     }

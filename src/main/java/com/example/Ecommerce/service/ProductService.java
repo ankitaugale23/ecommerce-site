@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,9 +39,16 @@ public class ProductService {
         return  id;
     }
 
-    public List<String> retrieveBrandFromId(Integer id){
-        List<String> ref = repo.findBrandFromId(id);
-        return ref;
+    public List<Pair<String, BigDecimal>> retrieveBrandFromId(Integer id){
+        List<Object[]> ref = repo.findBrandFromId(id);
+        List<Pair<String,BigDecimal>> brands  = new ArrayList<Pair<String,BigDecimal>>();
+        for(int i=0;i<ref.size();i++){
+            Object[] brand = ref.get(i);
+            String name = (String) brand[0];
+            BigDecimal price = (BigDecimal) brand[1];
+            brands.add(Pair.of(name,price));
+        }
+        return brands;
     }
 
 }

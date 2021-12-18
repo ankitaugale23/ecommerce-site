@@ -20,6 +20,6 @@ public interface ProductRepository extends JpaRepository<Product,Integer> {
     @Query(value = "select id from product where name=?",nativeQuery = true)
     public Integer findIfFromName(String name);
 
-    @Query(value = "select name from brand where pid=?",nativeQuery = true)
-    public List<String> findBrandFromId(Integer id);
+    @Query(value = "select name,price from brand where pid=?",nativeQuery = true)
+    public List<Object[]> findBrandFromId(Integer id);
 }

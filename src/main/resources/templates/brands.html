@@ -10,7 +10,7 @@
     <form action="brand" method="get">
         <div th:each="obj:${dairybrands}">
 
-            <input type="submit" th:value="${obj}" name="dairybrand"></input>
+            <input type="submit" th:value="${obj.first}+'  '+${obj.second}" name="${obj.second}"></input>
 
         </div>
     </form>
